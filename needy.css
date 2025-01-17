@@ -1,0 +1,249 @@
+@font-face {
+    font-family: p2p;
+    src: url(resources/fonts/PressStart2P.ttf);
+}
+
+@font-face {
+    font-family: dbm7;
+    src: url(resources/fonts/DinkieBitmap-7px.ttf);
+}
+
+@font-face {
+    font-family: dbm9;
+    src: url(resources/fonts/DinkieBitmap\ 9px.ttf);
+}
+
+@font-face {
+    font-family: mp10;
+    src: url(resources/fonts/PixelMplus10-Regular.ttf);
+}
+
+@font-face {
+    font-family: zpix;
+    src: url(resources/fonts/zpix.ttf);
+}
+
+:root {
+    --white: #fdfdfd;
+    --almostwhite: #fff8ff;
+    --cyan: #90f4e4;
+    --darkgrey: #454355;
+    --darkergrey: #1e1e26;
+    --greyishpink: #f6e0fa;
+    --lightgrey: #e3e3e3;
+    --lightergrey: #fdf7fd;
+    --midgrey: #a9a6c3;
+    --pink: #f0d1f1;
+    --purple: #4d23cf;
+    --red: #e65152;
+    --shadows: #4d23cf80;
+}
+
+* {
+    box-sizing: border-box;
+    scrollbar-color: #ccebfb #e99fe7;
+}
+
+body {
+    background: url(resources/images/wallpaper.png) 0 0/contain fixed;
+    color: var(--purple);
+    font: calc(0.7vw + 0.7vh) mp10;
+    image-rendering: pixelated;
+    margin: 0 auto;
+    width: 72.5%;
+    -webkit-font-smoothing: none
+}
+
+body::before, body::after {
+    content: "";
+    display: block;
+    height: 100dvh;
+    position: fixed;
+    top: 0;
+    width: 11.25%;
+    z-index: 500;
+}
+
+body::before {
+    background: url(resources/images/sidebars/nightL.png) 0 0/cover;
+    border-left: 2.5vw solid #000;
+    left: 0;
+}
+
+body::after {
+    background: url(resources/images/sidebars/nightR.png) 0 0/cover;
+    border-right: 2.5vw solid #000;
+    right: 0;
+}
+
+#all {
+    height: 100dvh;
+    padding-top: 0.5em;
+}
+
+#taskbar {
+    align-items: center;
+    display: flex;
+    gap: 13px;
+    position: fixed;
+    width: 78.7%;
+    height: 5.5%;
+    padding: 8px;
+    background: url(resources/images/ui/taskbar.png) 0 0/cover;
+    z-index: 500;
+    bottom: 0;
+}
+
+#start {
+    aspect-ratio: 17/4;
+    background: url(resources/images/ui/start.png) 0 0/cover;
+    border: none;
+    font: 1.15rem mp10;
+    height: 3.75vh;
+    text-align: center;
+    padding: 2px 12px 2px 35px;
+}
+
+#start:hover {
+    background-image: url(resources/images/ui/start_pressed.png);
+}
+
+#taskbar-icons {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+    width: 5.5em;
+}
+
+#taskbar-icons img {
+    aspect-ratio: 1/1;
+    display: block;
+    width: 1.25em;
+}
+
+.window {
+    --window-border: var(--lightgrey);
+    --titlebar-color: var(--lightgrey);
+    --titlebar-buttons: url(resources/images/ui/buttons_grey.png);
+
+    background: var(--window-border);
+    border: 2px solid var(--purple);
+    filter: drop-shadow(5px 5px var(--shadows));
+    height: max-content;
+    max-width: 70%;
+    padding: 4px 4px 0 4px;
+    position: absolute;
+}
+
+.window::after {
+    aspect-ratio: 61/9;
+    background: url(resources/images/ui/windowdeco.png) no-repeat;
+    content: "";
+    display: block;
+    height: 9px;
+}
+
+.window:hover {
+    --window-border: var(--cyan);
+    --titlebar-color: var(--pink);
+    --titlebar-buttons: url(resources/images/ui/buttons.png);
+    z-index: 50;
+}
+
+.titlebar {
+    background: var(--titlebar-color);
+    display: flex;
+    font: 0.95em dbm9;
+    letter-spacing: 1px;
+    padding: 2px 3px;
+}
+
+.titlebar p {
+    margin: 0;
+    width: 100%
+}
+
+.titlebar::before {
+    aspect-ratio: 1/1;
+    background: var(--purple);
+    content: "";
+    display: block;
+    height: 1.15em;
+    margin-right: 0.25em;
+}
+
+.titlebar::after {
+    aspect-ratio: 16/5;
+    content: "";
+    background: var(--titlebar-buttons) 0 0/cover;
+    height: 1.15em;
+    float: right;
+}
+
+.content {
+    background: var(--almostwhite);
+    height: calc(100% - 2.54em);
+    margin-block: 4px 5px;
+    overflow-y: auto;
+    padding: 0.5em;
+}
+
+.titlebar, .content {
+    border: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin-block: 0.25em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    margin: 0;
+}
+
+::selection {
+    background: var(--darkgrey);
+    color: #fff;
+}
+
+@media only screen and (max-width: 800px) {
+    body {
+        width: 100%;
+    }
+    
+    body::before, body::after {
+        display: none;
+    }
+    
+    #all {
+        font-size: calc(1.75vw + 1.75vh);
+    }
+    
+    #taskbar {
+        width: 100%;
+    }
+
+    #taskbar-icons {
+        display: none;
+    }
+    
+    #start {
+        height: 1.35em;
+    }
+
+    .window {
+        margin: 10px auto;
+        position: static;
+        min-width: 90%
+    }
+    
+    .titlebar::after {
+        background-size: cover;
+    }
+    
+}

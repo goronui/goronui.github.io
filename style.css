@@ -1,0 +1,93 @@
+#desktop-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    justify-content: center;
+    left: 16.75%;
+    position: absolute;
+    top: 4.5%;
+    width: 5vw;
+}
+
+#desktop-icons img {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+}
+
+#desktop-icons a {
+    font: 0.9em dbm9;
+    color: var(--purple);
+}
+
+#desktop-icons a::after {
+    content: attr(data-label);
+    display: block;
+    margin-top: 0.3em;
+    text-align: center;
+}
+
+#webcam {
+    left: 24%;
+    top: 5%;
+}
+
+#webcam .content, #webcam .content img {
+    aspect-ratio: 1.533/1;
+    width: calc(31vw + 5dvh);
+}
+
+#webcam .content {
+    background: url(resources/images/streambg2.png) 0 0/cover;
+    overflow: hidden;
+    padding: 0;
+}
+
+nav {
+    right: 16%;
+    top: 3%;
+    width: 22vw;
+}
+
+nav .content {
+    gap: 5px;
+    grid-template: repeat(6, 12%)/ repeat(2, auto);
+}
+
+nav a {
+    color: var(--midgrey);
+    border-bottom: 1px solid var(--greyishpink);
+    display: block;
+    padding-block: 5px;
+}
+
+nav a[href] {
+    color: var(--purple);
+}
+
+nav a:not(nav a[href])::after {
+    content: " (tba) ";
+}
+
+nav a[href]:hover {
+    font-style: italic;
+}
+
+@media only screen and (max-width: 800px) {
+#desktop-icons {
+    display: grid;
+    row-gap: 3em;
+    grid-template: repeat(2, auto)/repeat(3, auto);
+    justify-content: space-around;
+    position: static;
+    width: 100%;
+}
+
+#desktop-icons img {
+    width: 5em;
+}
+
+#webcam .content, #webcam .content img {
+    width: 100%;
+}
+}

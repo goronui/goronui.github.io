@@ -1,12 +1,127 @@
+<!--
+
+
+
+
+
+
+
+
+
+                                i c u
+
+
+
+
+
+
+
+
+
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>body{font-family: arial, sans-serif;}</style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="needy.css">
+    <link rel="shortcut icon" href="https://file.garden/ZeWhoxo9KEiz9dHt/4238bc75.gif" type="image/x-icon">
+    <title>⠀</title>
 </head>
 <body>
-    <p>test</p>
+    <div id="all">
+        <div id="desktop-icons">
+            <a href="#" data-label="Stream"><img src="resources/images/icons/stream.png"></a>
+            <a href="#" data-label="Hang Out"><img src="resources/images/icons/hangout.png"></a>
+            <a href="#" data-label="Sleep"><img src="resources/images/icons/sleep.png"></a>
+            <a href="#" data-label="Medication"><img src="resources/images/icons/medicine.png"></a>
+            <a href="#" data-label="Internet"><img src="resources/images/icons/web.png"></a>
+            <a href="#" data-label="Go Out"><img src="resources/images/icons/maps.png"></a>
+        </div>
+        <div id="webcam" class="window">
+                <div class="titlebar">
+                    <p>webcam</p>
+                </div>
+                <div class="content">
+                    <div id="img-load"></div>
+                </div>
+        </div>
+            
+        <div class="window" style="width: 32.5vw; bottom: 25%; right: 20%; z-index: 2;">
+           <div class="titlebar">
+            <p>80cchi Channel</p>
+           </div>
+            <div class="content">
+                <p>hello Bro</p>
+                <p>im not done yet here so get out!!!</p>
+                <p>The windows are draggable btw</p>
+            </div>
+        </div>
+        <div class="window" style="bottom: 10%; left: 28%; width: 32.5vw;">
+            <div class="titlebar">
+                <p>music Player</p>
+            </div>
+            <div class="content" style="padding: 0;">
+                <iframe src="resources/iframe/player/index.html" frameborder="0" style="width: 100%; height: 17.5vh;"></iframe>
+            </div>
+        </div>
+        <!--<nav class="window">
+            <div class="titlebar">
+                <p>navigation</p>
+            </div>
+            <div class="content">
+                <a>info</a>
+                <a href="chat.html">chatbox</a>
+                <a>blog</a>
+            </div>
+        </nav>-->
+        <div id="taskbar">
+            <button id="start">START</button>
+            <div id="taskbar-icons">
+                <img src="resources/images/icons/twt_small.png">
+                <img src="resources/images/icons/line_small.png">
+                <img src="resources/images/icons/taskmgr_small.png">
+            </div>
+        </div>
+    </div>
 </body>
+
+<script>
+// define your images here
+    var images = [
+      "resources/images/webcam/AmeTakingSelfie.gif",
+      "resources/images/webcam/AmeVoiceTraining.gif",
+      "resources/images/webcam/Amechansmokingisbadforyourlungs.gif",
+      "resources/images/webcam/AmeNailPolish.gif",
+      "resources/images/webcam/AmeHeadphones.gif",
+      "resources/images/webcam/Texthappi.gif",
+      "resources/images/webcam/Textfluster.gif",
+      "resources/images/webcam/Textcrazy.gif",
+      "resources/images/webcam/Amechanyanderu.gif",
+      "resources/images/webcam/Amechanfidgetspinner.gif",
+      "resources/images/webcam/Amechanreading.gif",
+      "resources/images/webcam/Longhairamechan.gif",
+      "resources/images/webcam/Ponytailamechan.gif",
+      "resources/images/webcam/Sidehairamechan.gif",
+      "resources/images/webcam/Kasame.gif",
+      "resources/images/webcam/gay.png",
+    ];
+    
+    // this chooses a random number from all available image indices
+    var randomImage = images[Math.floor(Math.random() * images.length)];
+    console.log(randomImage);
+    // make the URL into a proper image tag
+    var image = "<img src='" + randomImage + "'>";
+    // append to the div
+    document.getElementById("img-load").innerHTML = image;
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script>
+$( function() {
+$( ".window" ).draggable();
+} );
+</script>
+
 </html>
